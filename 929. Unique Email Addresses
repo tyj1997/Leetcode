@@ -1,0 +1,13 @@
+class Solution(object):
+    def numUniqueEmails(self, emails):
+        """
+        :type emails: List[str]
+        :rtype: int
+        """
+        s=set()
+        for email in emails:
+            a,b=email.split("@")
+            a=a.split("+")[0].replace('.','')
+            s.add(a+"@"+b)
+        return len(s)
+        
